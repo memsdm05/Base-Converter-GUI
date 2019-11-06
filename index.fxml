@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <tabs>
+      <Tab text="Convert Files">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Polyline layoutX="106.0" layoutY="74.0" points="-50.0, -40.0, 101.0, -40.0, 132.0, -16.5, 132.0, 189.5, -50.0, 189.5, -50.0, -40.0" strokeDashOffset="100.0" strokeLineCap="ROUND" strokeWidth="5.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="20.0">
+                     <fill>
+                        <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#ff8800" />
+                              <Stop color="#ffee00" offset="0.0074487895716946" />
+                              <Stop color="#ff8800" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Polyline>
+                  <Polyline layoutX="412.0" layoutY="74.0" points="-50.0, -40.0, 101.0, -40.0, 132.0, -16.5, 132.0, 189.5, -50.0, 189.5, -50.0, -40.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeMiterLimit="1.0" strokeWidth="5.0" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="20.0">
+                     <fill>
+                        <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#ff8800" />
+                              <Stop color="#ffee00" offset="0.0074487895716946" />
+                              <Stop color="#ff8800" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Polyline>
+                  <Text fontSmoothingType="LCD" layoutX="232.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&gt;" wrappingWidth="129.6875">
+                     <font>
+                        <Font name="Roboto Bold" size="200.0" />
+                     </font>
+                  </Text>
+                  <Accordion layoutX="264.0" layoutY="299.0" />
+                  <Label layoutX="283.0" layoutY="282.0" />
+                  <Label id="input_file" fx:id="input_file" alignment="TOP_LEFT" layoutX="38.0" layoutY="47.0" prefHeight="215.0" prefWidth="152.0" text="values.dat" wrapText="true">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label id="output_file" fx:id="output_file" alignment="TOP_LEFT" layoutX="410.0" layoutY="47.0" prefHeight="215.0" prefWidth="152.0" text="converted.dat" wrapText="true">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Polyline accessibleText="hi" fill="#ff880000" layoutX="73.0" layoutY="74.0" onDragDropped="#fileInDrop" onDragOver="#fileInOver" onMouseClicked="#fileInChoose" points="-50.0, -40.0, 101.0, -40.0, 132.0, -16.5, 132.0, 189.5, -50.0, 189.5, -50.0, -40.0" stroke="TRANSPARENT" strokeDashOffset="100.0" strokeLineCap="ROUND" strokeWidth="5.0">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Polyline>
+                  <Polyline fill="#ff880000" layoutX="445.0" layoutY="74.0" onDragDropped="#fileOutDrop" onDragOver="#fileOutOver" onMouseClicked="#fileOutChoose" points="-50.0, -40.0, 101.0, -40.0, 132.0, -16.5, 132.0, 189.5, -50.0, 189.5, -50.0, -40.0" stroke="TRANSPARENT" strokeDashOffset="100.0" strokeLineCap="ROUND" strokeWidth="5.0">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Polyline>
+                  <Label layoutX="398.0" layoutY="17.0" text="converted.dat" />
+                  <Button id="file_convert" alignment="CENTER" graphicTextGap="1.0" layoutX="20.0" layoutY="282.0" mnemonicParsing="false" onAction="#file_convert" prefHeight="10.0" prefWidth="560.0" text="CONVERT">
+                     <font>
+                        <Font name="System Bold" size="33.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Convert Numbers">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox layoutX="105.0" layoutY="29.0" prefHeight="178.0" prefWidth="392.0">
+                     <children>
+                        <TextField id="input_number" fx:id="input_number" prefHeight="50.0" promptText="Input Number" />
+                        <TextField id="input_base" fx:id="input_base" prefHeight="50.0" promptText="Input Base" />
+                        <TextField id="outbase_base" fx:id="output_base" prefHeight="50.0" promptText="Output Base" />
+                        <HBox prefHeight="30.0" prefWidth="392.0">
+                           <children>
+                              <Button id="number_convert" mnemonicParsing="false" onAction="#num_convert" prefHeight="32.0" prefWidth="412.0" text="Convert">
+                                 <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button id="number_convert" mnemonicParsing="false" onAction="#clear" prefHeight="32.0" prefWidth="412.0" text="Clear">
+                                 <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" height="95.0" layoutX="105.0" layoutY="245.0" stroke="TRANSPARENT" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" width="390.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#ff8800" />
+                              <Stop color="#ffee00" offset="0.0074487895716946" />
+                              <Stop color="#ff8800" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Label id="convert_number_label" fx:id="num" alignment="CENTER" layoutX="106.0" layoutY="256.0" prefHeight="73.0" prefWidth="390.0" text="###########">
+                     <font>
+                        <Font size="50.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Random Number">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" height="196.0" layoutX="77.0" layoutY="24.0" stroke="TRANSPARENT" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" width="447.0" AnchorPane.leftAnchor="77.0" AnchorPane.rightAnchor="76.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#ff8800" />
+                              <Stop color="#ffee00" offset="0.0074487895716946" />
+                              <Stop color="#ff8800" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Button id="random" fx:id="r" layoutX="214.0" layoutY="261.0" mnemonicParsing="false" onAction="#random" prefHeight="61.0" prefWidth="172.0" text="Randomize">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="rand_num" alignment="CENTER" layoutX="94.0" layoutY="34.0" prefHeight="55.0" prefWidth="425.0" text="###############" AnchorPane.leftAnchor="94.0" AnchorPane.rightAnchor="81.0">
+                     <font>
+                        <Font size="44.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="252.0" layoutY="103.0" prefHeight="17.0" prefWidth="109.0" text="Base" AnchorPane.leftAnchor="252.0" AnchorPane.rightAnchor="239.0">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="rand_base" alignment="CENTER" layoutX="278.0" layoutY="156.0" prefHeight="55.0" prefWidth="57.0" text="##" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="245.0">
+                     <font>
+                        <Font size="44.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Help">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="1.0" arcWidth="1.0" height="372.0" layoutX="-4.0" layoutY="-3.0" stroke="TRANSPARENT" strokeType="INSIDE" width="604.0">
+                     <fill>
+                        <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#ff8800" />
+                              <Stop color="#ffee00" offset="0.0074487895716946" />
+                              <Stop color="#ff8800" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Accordion layoutX="5.0" layoutY="14.0" prefHeight="182.0" prefWidth="590.0">
+                     <panes>
+                        <TitledPane animated="false" prefHeight="128.0" prefWidth="591.0" text="Convert Files">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="TOP_LEFT" layoutX="20.0" layoutY="7.0" prefHeight="72.0" prefWidth="521.0" text="When converting, always drag and drop your &quot;values.dat&quot; onto the first file. Then drag and drop a directory onto the second file. The file &quot;converted.dat&quot; will be made there. Once you have done this you can press the convert button. The file names don't have to be &quot;values.dat&quot; or &quot;converted.dat&quot;. " wrapText="true" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" prefHeight="128.0" prefWidth="617.0" text="Convert Numbers">
+                           <content>
+                              <AnchorPane prefHeight="0.0" prefWidth="591.0">
+                                 <children>
+                                    <Label alignment="TOP_LEFT" layoutX="11.0" layoutY="8.0" prefHeight="59.0" prefWidth="524.0" text="Each text box is a parameter. Just follw the text prompts and you'll do fine. All inputs are limited to base 2-16 and will auto default to the closed extreme. When you are done inputing the parameters press convert to see the output." wrapText="true" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="Random Number">
+                           <content>
+                              <AnchorPane prefHeight="76.0" prefWidth="607.0">
+                                 <children>
+                                    <Label alignment="TOP_LEFT" layoutX="18.0" layoutY="18.0" prefHeight="25.0" prefWidth="182.0" text="Press the randomize button" wrapText="true" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="21.0" layoutX="13.0" layoutY="332.0" stroke="TRANSPARENT" strokeType="INSIDE" width="238.0" />
+                  <Label layoutX="25.0" layoutY="334.0" prefHeight="17.0" prefWidth="224.0" text="(c) Ben Browner 2019 AP COMP SCI BaseConverter">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="34.0" layoutY="231.0" prefHeight="57.0" prefWidth="530.0" text="Hope you liked my app!">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+   </tabs>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</TabPane>
